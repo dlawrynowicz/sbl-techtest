@@ -6,6 +6,9 @@ all the way up to very large (4K desktop display).
 The look and feel of each card element should resemble that of the linked Sketch Cloud document.
 ```
 
+### Demo
+WebApp is available here https://sbl-techtest.web.app/
+
 ### Plan
 - setup env
 - add api module
@@ -22,8 +25,25 @@ We can throw `node-sass` to help with styling and again webpack will cover us wi
 It looks like API return images in different sizes, I'm going to use background-image to make it easier to scale.
 Some record returned by API don't have `runningTime` prop, going to display the element only when property is available
 
-Going to use `em` and `rem` values for css so we can scale things up/down as needed
+Going to use `em` and `rem` values for css so we can scale things up/down as needed.
 
 Within first hour I was able to display elements, still needs some css tweaks.
+Spend another hour tweaking CSS.
 
+App is build in the way it can be translated to SSR, we should be able to include it to any website, and it should respect parent styling and scale up accordingly.
+Design is not implementen in `pixel perfect` way, but I feel like it is close enough for purpose of this exercise. 
+With compromise over `pixel perfect` we have scallable components.
+
+Solution is deployed to Firebase hosting
+
+### ToDo
+- Seek feedback
+- refactor code
+- add SSR?
+
+
+### Development
+- `yarn start` to start development server
+- `yarn build` to build production app
+- `firebase deploy` to deploy to production
 
