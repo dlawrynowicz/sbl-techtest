@@ -5,7 +5,7 @@
   height: calc(#{$width / $ratio});
 }
 @mixin cardItemDimmensions($width) {
-  $ratio: calc(354 / 333);
+  $ratio: calc(354 / 329);
   @include calcDimmensions($ratio, $width);
 }
 
@@ -15,35 +15,34 @@
 }
 
 .card-item {
-  @include cardItemDimmensions(24em);
+  @include cardItemDimmensions(22em);
+  line-height: 1;
   text-transform: uppercase;
-  background: #2B2F3B;
-  border: calc(1em/8) solid #464B5E;
+  letter-spacing: 0;
+  background: $card-background-color;
+  border: calc(1em/8) solid $card-border-color;
   display: flex;
   margin: 0.5em;
   flex-direction: column;
 
-  @media #{$mq-xsmall} {
-    @include cardItemDimmensions(17em);
-  }
-
   a {
-    color: #ffffff;
+    color: $white;
     text-decoration: none;
   }
 
   .title-container {
-    font-size: 1.4em;
+    font-size: 1.44em;
+    padding: 0.9em 0.8em 0em 0.8em;
+  }
+
+  .title-container a:hover {
+      text-decoration: underline;
   }
 
   .image-container {
-    @include previewImageDimmensions(24em);
+    @include previewImageDimmensions(22em);
     background-size: cover;
     background-repeat: no-repeat;
-
-    @media #{$mq-xsmall} {
-      @include previewImageDimmensions(17em);
-    }
   }
 
   .running-time {
@@ -52,13 +51,14 @@
     padding: calc(1em/3);
     text-align: start;
     display: flex;
-    background: #ffffff;
-    color: #000000;
+    background: $white;
+    color: $card-running-time-color;
     width: fit-content;
 
     .icon {
+        color: $black;
       width: $base-font-size*0.95;
-      margin: 0.05em 0.1em 0 0;
+      margin: 0 0.2em 0 0;
     }
   }
 }
