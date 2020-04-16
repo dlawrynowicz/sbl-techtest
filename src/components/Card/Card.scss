@@ -16,7 +16,6 @@
 
 .card-item {
   @include cardItemDimmensions(22em);
-  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0;
   background: $card-background-color;
@@ -25,6 +24,14 @@
   margin: 0.5em;
   flex-direction: column;
 
+  @media #{$mq-xsmall} {
+    @include cardItemDimmensions(18em);
+  }
+
+  @media #{$mq-small} {
+    @include cardItemDimmensions(20em);
+  }
+
   a {
     color: $white;
     text-decoration: none;
@@ -32,7 +39,7 @@
 
   .title-container {
     font-size: 1.44em;
-    padding: 0.9em 0.8em 0em 0.8em;
+    padding: 0.9em 1.2em 0.9em 0.8em;
   }
 
   .title-container a:hover {
@@ -43,6 +50,14 @@
     @include previewImageDimmensions(22em);
     background-size: cover;
     background-repeat: no-repeat;
+
+    @media #{$mq-xsmall} {
+      @include previewImageDimmensions(18em);
+    }
+
+    @media #{$mq-small} {
+      @include previewImageDimmensions(20em);
+    }
   }
 
   .running-time {
